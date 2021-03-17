@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { CounterNgrxComponent } from './counter-ngrx/counter-ngrx.component';
 import { counterReducer } from './store/counter/counter.reducer';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { counterReducer } from './store/counter/counter.reducer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ counter : counterReducer })
+    AuthModule,
+    SharedModule,
+    StoreModule.forRoot({ counter : counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]
