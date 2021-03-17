@@ -7,18 +7,23 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { CounterNgrxComponent } from './counter-ngrx/counter-ngrx.component';
+import { counterReducer } from './store/counter/counter.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CounterNgrxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ counter : counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

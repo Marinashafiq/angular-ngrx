@@ -8,7 +8,7 @@ import { CounterDataService } from '../counter-data.service';
 })
 export class HomeComponent implements OnInit {
 
-  counter : number ;
+  counter ;
 
   constructor(private counterService : CounterDataService) { }
 

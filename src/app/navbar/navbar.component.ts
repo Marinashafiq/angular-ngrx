@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { CounterDataService } from './../counter-data.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { CounterDataService } from './../counter-data.service';
 })
 export class NavbarComponent implements OnInit {
   counter;
-  constructor(private counterService: CounterDataService) {}
+  ngrxCounter ;
+  constructor(private counterService: CounterDataService , private store : Store<{counter}>) {}
 
   ngOnInit(): void {
     this.getCounterValue();
+   this.ngrxCounter =  this.store.select('counter');
   }
 
+
+
   getCounterValue() {
-    this.counterService.counter.subscribe((data) => (this.counter = data));
+    this.counter = this.counterService.counter
   }
 
   changeCounter(){

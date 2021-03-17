@@ -1,3 +1,15 @@
-<p>counter : {{counter}}</p>
-
-<button (click)="changeCounter()">Change counter +1</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <hr />
+      <h1>Behavior Subject Counter</h1>
+      <p>counter : {{ counter }}</p>
+      <button (click)="changeCounter()">Change counter +1</button>
+    </div>
+    <div class="col-md-6">
+      <hr />
+      <h1>NgRx Counter</h1>
+      <app-counter-ngrx></app-counter-ngrx>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ export class UsersService {
   constructor(private http:HttpClient) { }
 
   getUsersList(){
-    return this.http.get('https://fakestoreapi.com/users');
+    return this.http.get('https://60523dc8fb49dc00175b7d04.mockapi.io/api/v1/products/');
   }
 
   addUser(data){

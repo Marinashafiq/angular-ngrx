@@ -1,5 +1,7 @@
 
-<h2>counter : {{counter}}</h2>
+<h2>Beehavior counter : {{counter | async}}</h2>
 
 
-<button (click)="changeCounter()">Change counter from navbar +2</button>
+<!-- <button (click)="changeCounter()">Change counter from navbar +2</button> -->
+
+<h2>Ngrx counter : {{(ngrxCounter | async).counterValue}}</h2>
